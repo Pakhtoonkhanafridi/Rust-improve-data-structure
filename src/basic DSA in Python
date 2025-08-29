@@ -1,0 +1,145 @@
+name = "khan"
+age = 20
+pric = 45.5
+is_student = True
+print("Name", name)
+print("Age", age)
+print("Price", pric)
+print("Is Student ", is_student)
+print(type(name))
+print(type(age))
+print(type(pric))
+print(type(is_student))
+print(id(name))
+print(id(age))
+print(id(pric))
+print(id(is_student))
+print("Hello " + name + " your age is " + str(age)
+      + "and yout price is " + str(pric))
+print(f"hello {name} your age is {age}and your price is {pric}")
+print("hello {} your age is {} and your price is {}".format(
+    name, age, pric
+))
+print("hello {0} your age is {1} and your price is" \
+" {2}".format(name, age, pric))
+print("hello {n} your age is {a} and you price is {p}"
+      .format(n=name, a=age, p=pric) )
+print("hello {n} your age is {a} and your price is {p}"
+.format(p=pric, a=age, n=name))
+
+
+
+
+number_of_students = 100
+print("number of students", number_of_students)
+
+temperature = 98.6
+price = 45.5
+is_student = True
+print("Temperature", temperature)
+print("Price",price)
+print("Is Student", is_student)
+
+# Booleans
+boolean_value = True
+print(boolean_value)
+
+is_running = False
+print(is_running)
+print(type(boolean_value))
+
+is_sunny = True
+print(is_sunny)
+print(type(is_sunny))
+has_license = False
+print("Licence", has_license)
+
+my_name = "khan"
+my_age = 30
+bank_balance = 1000.50
+is_employed = True
+print("Name", my_name)
+print("Age", my_age)
+print("Bank Balance", bank_balance)
+print("is Employed", is_employed)
+
+a= 10
+b= 2
+
+print(a+b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a // b)
+print(a % b)
+print(a ** b)
+print(10 + 2 * 3)
+print()
+
+
+# String Operations
+name = "khan"
+greeting = "hello , " + name + "!"
+print(greeting)
+
+print(greeting * 3) 
+
+name = "khan"
+greeting = "hello"
+full_greeting = f"{greeting}, {name}!!!!!"
+print(full_greeting)
+
+laugh = "ha "
+print(laugh * 5)
+
+is_sunny = True
+is_weekend = False
+print("is_sunny and weekend",is_sunny and is_weekend)
+print("Is_sunny or is_weekend", is_sunny or is_weekend)
+print("is_sunny", not is_sunny)
+
+# Type Conversion (Casting)
+user_input =input("Enter a number: ")
+age= int(user_input)
+print(type(age))
+
+price = 19.99
+message = "The price is $ " + str(price)
+print(message)
+print(type(message))
+
+print(bool(1))
+print(bool(0))
+print(bool(-1))
+print(bool("Hi"))
+print(bool(""))
+
+fruits = ["apple", "banana", "cherry"]
+numbers = [1,2,3,4,5]
+mixed = [42, "hello", True, 3.14, True]
+
+print(fruits[0])
+print(numbers[2]) # 3
+
+fruits[1] = "blueberry"
+print(fruits) # ['apple', 'blueberry', 'cherry']
+
+fruits.append("orange")
+print(fruits)
+fruits.remove("apple")
+print(fruits)
+
+
+score = 90
+if score >= 0:
+    if score >= 50:
+        print("pass")
+    else:
+        print("fail")
+
+else:
+    print("invalid score")
+
+    number_of_students = 100
+    
+    print("number of students", number_of_students)
