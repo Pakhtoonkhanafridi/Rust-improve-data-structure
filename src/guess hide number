@@ -1,0 +1,37 @@
+import random
+
+def guessing_game():
+    # Generate a random number between 1 and 100
+    number_to_guess = random.randint(1, 100)
+    
+    players = ["Muhammad", "Sanan", "Musavir"]
+    current_player_index = 0
+    
+    while True:
+        current_player = players[current_player_index]
+        print(f"\n{current_player}'s turn.")
+        
+        # Ask the current player for their guess
+        user_guess = input("Guess a number between 1 and 100: ")
+        
+        # Validate the input
+        try:
+            user_guess = int(user_guess)
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+        
+        # Check if the guess is correct
+        if user_guess == number_to_guess:
+            print(f"Congratulations, {current_player}! You've guessed the number correctly.")
+            break
+        elif user_guess < number_to_guess:
+            print("Your guess is too low. Try again!")
+        else:
+            print("Your guess is too high. Try again!")
+        
+        # Move to the next player
+        current_player_index = (current_player_index + 1) % len(players)
+
+if __name__ == "__main__":
+    guessing_game()
