@@ -1,0 +1,84 @@
+# age = 30
+# print("Your age is:", age)
+
+
+# if age >= 18:
+#     print("You are an adult.")
+# elif age >= 35:
+#     print("You are a middle-aged adult.")
+# elif age >= 13:
+#     print("You are a teenager.")
+
+# else:
+#     print("You are a child.")
+
+# numbers = [1, 2, 3, 4, 5, 6.7, 8, 9, 10]
+# even_numbers = [] # Start with an empty List
+
+# for num in numbers:
+#     if num % 2 == 0:
+#         even_numbers.append(num)
+# print("Even numbers:", even_numbers)
+
+# products = [("laptop", 1200), ("Coffee", 3.50), ("Book", 15),
+#             ("headphones", 80)]
+
+# categories = {
+#     "Budget": [],
+#     "Mid-range": [],
+#     "Premium": []
+# }
+
+# for item in products:
+#     name, price = item
+
+#     if price < 20:
+#         categories["Budget"].append(name)
+#     elif price < 20:
+#         categories["Mid-range"].append(name)
+#     else:
+#         categories["Premium"].append(name)
+
+# print("\n", products)
+# print(categories)
+
+
+# # Validating User Input for a Data Structure
+# valid_emails =[] # We will only add valid emails here
+
+# print("Enter email addresses. type 'done' when finished.")
+
+# while True:
+#     email = input("> ").strip().lower()
+
+#     if email == 'done':
+#         break
+#     if  email and '@' in email:
+#         valid_emails.append(email)
+#         print(f"Added:{email} to the list.")
+#     else:
+#         print("Invalid email, Please try again.") 
+#         # Give  user feedback on invalid input
+
+# print("\nValid Emails collected:", valid_emails)
+
+# Searching for in a list of Dictionaries
+
+contacts = [
+    {'name': 'Ahmad', 'phone': '555-1234'},
+    {'name': 'Pak', 'phone': '555-5678'},
+    {'name': 'Afridi', 'phone': '555-9012'}
+]
+
+search_name = input("who are you looking for? ").title()
+found_contact = None 
+
+for contact in contacts:
+    if contact["name"] == search_name:
+        found_contact = contact
+        break
+    
+if found_contact:
+    print(f"Found {search_name}! Phone number: {found_contact['phone']}")
+else:
+    print(f"Sorry, {search_name} not found in contacts.")
