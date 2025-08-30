@@ -1,0 +1,71 @@
+# name = 'khan'
+# age = 20
+# print("Hello " + name + ", you are " + str(age) + " years old.")
+# print(f"Hello {name}, you are {age}, years old.")
+
+# price = 19.99
+# quantity = 3
+# print (f"Total ${price * quantity:.2f}")
+
+# # Advance  Input(): Getting the    Right Data Type
+ 
+# age_str=input("enter you age: ") 
+# print(age_str)
+# print(type(age_str))
+# age = int(age_str)
+# print(age)
+# age = int(input("enter your age: "))
+# print(f"next year you will be {age + 1}")
+
+# price = float(input("enter the price:"))
+# print(f"price with tax: ${price * 1.09:.2f}")
+
+# user_said_yes = input("continou? (yes/no): ").lower().strip() ==' yes'
+
+# #  Level two  : Combine  I/O with Data structures(The Real Power)
+
+# shopping_list = [] # start with an empty list
+# print("Enter your shopping items. type 'done' when finished.")
+# while True: # Loop forever until we break
+#     item = input("Item: ").strip() # Get input, remove extra spaces
+#     if item.lower() == 'done': #if user types done
+#         break
+#     shopping_list.append(item) # add item to the list
+
+# print("\nYour shoppint list:")
+# for product in shopping_list: # loop through each item in the list
+#         print(f"- {product}") # print the item
+
+# # building a Dictionary from user I/O
+
+# user_profile = {}
+
+# user_profile['name'] = input("Enter your name: ")
+# user_profile['age'] = int(input("Enter your age: "))
+# user_profile['email'] = input("Enter your email:")
+
+# print("\nYour profile:")
+# for key, value in user_profile.items():
+#      print(f"{key.title()}: {value}")
+
+
+contacts = [] # this will hold multiple dictioneries
+while True:
+     name = input("\nName:")
+     if name.lower() == 'quit':
+          break
+     phone = input("Phone: ")
+     email = input("email: ")
+
+# Create a new dictionary for each contact
+person = {
+     'name': name,
+     'phone': phone,
+     'Email': email
+}
+# Add the dictionary to the main list
+contacts.append(person)
+
+print("\nYour contacts:")
+for contact in contacts:
+     print(f"{contact['name']} - {contact['phone']} - {contact['Email']}")
