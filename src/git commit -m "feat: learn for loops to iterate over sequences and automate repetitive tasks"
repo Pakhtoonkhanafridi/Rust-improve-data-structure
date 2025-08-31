@@ -1,0 +1,69 @@
+# the magic word
+"""for single_item in collection_of_items:
+    do_something_with(single_item)
+    """
+
+# Play Games with Our toy Box!
+# say hello to each Toy
+ # your box of toys  cars
+toys_cars = ["Red Racer", "Blue Blazer", "Green Glider"]
+
+# Take out one car at a time
+for car in toys_cars:
+    print(f"Hello, {car}!") # Say Hello to each car
+
+# This does the same as:
+# print("Hello , Red Racer!")
+
+ # Count you Candies
+
+candies = ["lollipop", "chocolate", "gummy bear", "jelly bean"]
+
+# start counting from zero
+candy_count = 0
+
+# Look at each  candy one by one
+for candy in candies:
+    candy_count = candy_count + 1 # Add 1 for each candy
+    # You can also  write : candy_count += 1
+print(f"I have {candy_count} candies!") # I have 4 candies!
+
+# the logic mulitiplying Machine
+
+numbers = [1, 2, 3, 4, 5]
+doubled_numbers = [] # empty box for double numbers
+
+for num in numbers:
+    doubled = num * 2 # Double the current number
+    doubled_numbers.append(doubled) # Put it in the new  box
+
+print("Original:", numbers) # [1,2, 3, 4, 5]
+print("Double:", doubled_numbers) # [2, 4, 6, 8, 10]
+
+# The Word Detective
+#let 's see how many times the letter "a" appear in the word
+
+word = "banana banana"
+count = 0
+
+#  The loop will loop at each letter 
+
+for letter in word:
+    if letter == "a": # Is the current letter  "a"
+        count += 1   # If yes , add 1 to the count
+print(f"The letter 'a' appear {count} times in '{word}.'")
+# The letter 'a' appears 3 times in 'banana'.
+
+# The pary Invitation List
+
+friends = {"KhanA": "blue", "Afridi": "Pak", "black" : "red"}
+
+# .items() gives you both the key (name) and value (color)
+for name, color in friends.items():
+    print(f"Hi {name}! Please come to my party . I ' ll get you a {color} ballon.")
+
+# You can also loop just through keys:
+
+for name in friends:
+    print(f"Hello, {name}!")
+
