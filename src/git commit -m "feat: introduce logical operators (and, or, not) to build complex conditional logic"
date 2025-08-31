@@ -1,0 +1,43 @@
+age = int(input("How old are you? "))
+password = input("what's the secret password? ")
+
+#the Bouncer checks Both rules using AND
+if age >= 18 and password == "game":
+    print("Welcome to the clubhouse!")
+else:
+    print("Sorry, you can't come in.")
+
+
+# OR
+shirt_color = input("What color is your shirt? ").lower()
+brought_friend = input("Did you bring a friend? (yes/no)").lower()
+
+# The Nice Bouncer checks if A least on rule is True using OR
+if shirt_color == "red" or brought_friend == "yes":
+    print("come on in!")
+else:
+    print("Maybe next time. ")
+
+#The Grumpy Bouncer (not)
+
+is_tired = input("Are you tired? (yes/no)").lower()
+
+# The Grumpy Bouncer  uses Not to reverse the answer
+if not is_tired == "yes":
+    print("you seem energetic, Come play!")
+else:
+    print("Go home and take a nap!")
+
+# Combine them ! The ultimate ClubHouse
+
+age = int(input("How old are you? "))
+has_permission = input("Do you have a permission slip? (yes/no) ").lower()
+is_alone = input("Are you alone? (yes/no)").lower()
+
+#Let 's break down the ultimate Rule
+#( you old enough and have permission)  OR (You are not alon)
+
+if(age>= 10 and has_permission == "yes") or not is_alone == "yes":
+    print("Access granted to the treehouse!")
+else:
+    print("Access Denied.")
