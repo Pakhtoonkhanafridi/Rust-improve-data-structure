@@ -1,0 +1,59 @@
+# Our club rule: age >= 13
+age = int(input("How old are you? "))
+
+if age >= 13:
+    print("Welcome to the club!")
+else:
+    print("Sorry, you are not too young.")
+
+# your mix toy box
+mixed_blocks = ["red", "blue", "blue", "red", "red"]
+red_blocks = [] # New  box for red
+blue_blocks = [] # New box for blue
+
+for block in mixed_blocks:
+    # for each block, ask a question
+    if block == "red":
+        red_blocks.append(block) # If Yes , put in red box
+    else:
+        blue_blocks.append(block) # If No , put in blue box
+
+print("Red blocks:", red_blocks)
+print("BLue blocks:", blue_blocks)
+
+# the smart Dictionary  that Know your grade
+
+my_score = 85
+my_score = 85
+grade_rules = {
+    "A": 90,
+    "B": 80,
+    "C": 70,
+    "D": 60,
+    "F": 0
+}
+
+my_grade = "F" # default grade
+
+if my_score >= grade_rules["A"]:
+    my_grade = "A"
+elif my_score >= grade_rules["B"]:
+    my_grade =  "B"
+elif my_score >= grade_rules["C"]:
+    my_grade =  "C"                     
+elif my_score >= grade_rules["D"]:
+    my_grade =  "D" 
+
+print(f" Your score is {my_score}, Your grade is {my_grade} !")
+
+# Finding the winner find the highest score in a list
+
+scores = [120, 450, 300, 210, 550]
+high_score = 0 # We start by assuming the highest score is 0
+
+for score in scores:
+    if score > high_score:
+        high_score = score
+print(f"The winning score is {high_score}!")
+
+
