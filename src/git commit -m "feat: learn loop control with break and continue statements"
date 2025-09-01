@@ -1,0 +1,58 @@
+# the emergancy Exit(break)
+
+cookies = 10 # There  are 10 cookies in the jar
+
+for cookie in range(cookies):
+    print(f"Eating cookie number {cookie + 1}")
+
+    if cookie == 4: # after eating the five cookies (0,1,2,3,4)
+        print("I'm too full! Can't eat more.")
+        break # Emergany exit ! Stop the loop now
+print("Done eating.\n")
+
+# the picky Eater (Continue)
+# you have a plate of food . but you don't like broccoli. You want to eat everthing else.
+
+foods = [ "pizza", "broccoli", "ice cream", "carrots", "broccoli", "cake"]
+
+for food in foods:
+    if food == "broccoli":
+        print(" Yuck! broccoli! ")
+        continue # Skip THis ! Move to the next food
+    print(f" Yum! Eating {food}")
+print("finished me meal!")
+
+# the secret WOrd Game
+
+# Keep guessing words until someone says the secret word "banana".
+
+while True: # Loop forever ... unless we break!
+    word = input("GUess a fruit (say 'banana' to wing):").lower()
+
+    if word == 'banana':
+        print(" YOu WIn!")
+        break # Emergancy Exit! We're done!
+    elif word == "apple":
+        print("Good guess. but not the secret word!")
+        continue # Skip the rest and go to next guess
+    else:
+        print("Try Again!")
+
+print("Game Over")
+
+# the event Number Counter 
+# Count only even numbers , but stop when you reach 10
+
+number = 0
+
+while number < 20:
+    number += 1
+    
+    if number % 2 != 0:
+        continue # SKip it ! GO to next number
+    if number > 10: # if number is NOT even
+        break # stop the loop!
+    
+    print(f"Even number: {number}")
+
+print("Finished counting!")
