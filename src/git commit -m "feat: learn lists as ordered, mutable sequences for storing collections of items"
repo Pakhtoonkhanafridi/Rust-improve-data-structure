@@ -1,0 +1,40 @@
+# How to spot it : Use square brackets []
+favorite_books = ["Harry", "THe Hobbit", "Pyhton crash  Course"]
+print(favorite_books[0])
+
+favorite_books.append("The Martian")
+favorite_books.pop(1)
+print(favorite_books)
+
+#Tuples: The Sealed Display Case (())
+my_birthday =(15, "June", 1999)# Day , Moth , year
+print(my_birthday[1])
+print(my_birthday)
+
+# Dictionaries : the labled Drawers ({})
+my_profile ={
+    "name": "khan",
+    "age" : 24,
+    "hobbies": ["coding", "reading"] 
+}
+
+print(my_profile)
+
+print(my_profile["name"])
+print(my_profile["hobbies"][0])
+
+my_profile["job"] = "Engineer"
+my_profile["age"] = 31
+
+print(my_profile)
+
+# Sets: the Bag of Unique TOys ({})
+
+book_genres = {"fantasy", "sci-fi", "mystery", "fantasy"} 
+#"fantasy is duplicated"
+print(book_genres)
+
+print("sci-fi" in book_genres)
+print("romance" in book_genres)
+
+book_genres.add("non-fiction")
