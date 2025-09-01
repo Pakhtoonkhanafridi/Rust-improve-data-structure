@@ -1,0 +1,66 @@
+# while loop
+# Keep doing this while this condition is true
+# It will keep doing until  the condition becomes false
+
+# while condition_is_true:
+#     do_something()
+    # Don't forget to change something so the  can become false!
+
+# The countdown Rocket
+# let's count down from 10 to 1 , then blast off!
+
+count= 10
+
+while count > 0 : # keep looping while count is greater than 0
+    print(count)
+    count = count -1 #  This is very important ! It changes the count
+    # You can also write: count -=1
+print("blast off!")
+
+# The Never_ Ending Story (And How to Stop It!)
+#this loop will run forever until you tell it to stop
+
+while True:  # This condition is always True!
+    answer = input("Say ' stop' to end the game: ").lower()
+
+    if answer == "stop":
+        print("Okay, game over!")
+        break #The Magic Word to jump out of the loop immediately
+    else:
+        print("Let's keep going...")
+
+# Break is like the emergency exit : It jump out of the loop whenever you want
+
+# The Cookies Jar 
+cookies_in_jar = 5
+
+while cookies_in_jar >0:
+    print(f"Yum! YOu eat cookie. Cookies left: {cookies_in_jar}")
+    cookies_in_jar -=1 # Eat pm cookie
+print("Oh no! The cookie jar is empty")
+
+# The Guession Game
+secret_number = 7
+guess = None # We haven't guessed yet
+
+while guess != secret_number: # Keep looping While the is wrong
+    guess = int(input("Guesss a number 1 and 10: "))
+    
+    if guess < secret_number:
+        print("Too low! Try again.")
+    elif guess > secret_number:
+        print("Too high! Try again.")
+    else:
+        print("You got it! ")
+
+# The Patient Parent 
+# Keep cleaning your room while it's still  messay.
+room_is_clean = False # Start with messay  room
+
+while not room_is_clean: # While the room is Not clean
+    answer = input("Is your room clean yet? (yes/no)").lower()
+    if answer == "yes":
+        room_is_clean = True # This makes the condition false
+        print("Good job! you can Play now.")
+    else:
+        print("Keep cleaning")
