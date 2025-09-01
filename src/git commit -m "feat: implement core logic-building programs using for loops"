@@ -1,0 +1,26 @@
+for number in range(1, 1): 
+    print(number)
+
+
+
+num = 5
+for multipleir in range(0, 11):
+    result = num * multipleir
+    print(f"{num} * {multipleir} = {result}")
+
+n= 11
+total = 0 # This is our empty piggy bank
+for number in range (1, 1+n):
+    total = total + number # Put the number in the piggy bank
+
+print(f"The sum of number from 1 to {n} is {total}")
+
+
+# Factorial
+n = 5 
+result = 1 # Start  with in out box 
+
+for number in range(1, n+1):
+    result = result *  number # multiple what is the box number
+
+print(f"THe factorial of {n} is {result}") # Output: 120
