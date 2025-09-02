@@ -1,0 +1,98 @@
+# Thinking of a String as a List
+
+my_string = "hello"
+#index:   0: 'h' 
+
+for char in my_string:
+    print(char)
+
+first_letter = my_string[0]
+last_letter = my_string[-1]
+
+print("\n",first_letter)
+print(last_letter)
+
+#Common Operation and Their DSA Logic
+
+# sting,lower() , string.upper() , string.title()
+user_input = "Yes"
+if user_input.lower() == "yes":
+    print("User agreed!")
+
+# length
+text = ("Hello World")
+lenght = len(text)
+print(lenght)
+
+#string.strip() Removing whitespace
+
+filename= "    data.txt  \n"
+clean_name = filename.strip()
+print(clean_name)
+
+#  string.replace(old, new) - Replacing Parts
+sentence = "I love cats . Cats are great!"
+fixed_sentence = sentence.replace("cats", "dogs")
+
+
+print(sentence)
+print(fixed_sentence)
+
+# E string.split(delimiter) - Breaking into a List
+
+data = "apple, banana, cherry"
+fruits_list = data.split(',') 
+
+print(data)
+print(fruits_list)
+
+email = 'user@example.com'
+if "@" in email and "." in email:
+    print("Looks like a valid email format.")
+
+# APPLYINF  the logic: Mini DSA Problem
+# problem 1 : Check If a String ia Plindrome
+
+# A palindrome reads the same forward and backward(e.g "radar").
+
+#Logic :
+#Normilize the string  remove spaces, make lowercase
+# Compare the string to its reverse.
+
+def is_palindrome(s):
+    s = s.replace(" ","").lower()
+    return s == s[::-1]
+print(is_palindrome("A man a plan a canal Panama"))
+
+# DSA Concept : this Teaches two_pointer technique logix (Comparing start and end) and reversal.
+
+# Problem 2 : Count the Frequency of a Charater
+
+# Logix 
+# Normailize the (e.g, make lowercase for case-insensitive cout).
+#Loop through each character
+# Use a dictionary to keeep a running count
+
+def count_chars(s):
+    s= s.lower()
+    freq = {}
+    for char in s:
+        if char != " ":
+            freq[char] = freq.get(char, 0) + 1
+    return freq
+print(count_chars("Hello World"))
+
+# Problem 3 : Reverse WOrds in a String 
+# Give "the sky is blue" -> OUtpout : "blue is sky the" "
+
+# logic 
+#split() the string into a list of words
+# reverse() the list
+# join() the list back into a string with spaces
+
+def reverse_words(s):
+    words = s.split() # splict into list: ['the', 'sky', "is , "ble"]
+
+    words.reverse() # rReverse the list : ['blue','is ', 'sky', 'the']
+    return " ".join(words) # Join with spaces: "blue is sky the"
+print(reverse_words("the sky is blue"))
