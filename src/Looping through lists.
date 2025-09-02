@@ -1,0 +1,23 @@
+friends = ["Alice", "Bob", "Charlie"]
+
+for friend in friends:
+    print(f"Hello, {friend}")
+
+print("I have greet all my friends!")
+
+# Doing Math in a loop
+
+numbers = [1, 2, 3, 4, 5]
+
+for num in numbers:
+    doubled = num * 2
+    print(f"The double of {num} is {doubled}.")
+
+all_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = []
+
+for number in all_numbers:
+    if number % 2 == 0:
+        even_numbers.append(number)
+print("ALl number:", all_numbers)
+print("Even numbers:", even_numbers)
