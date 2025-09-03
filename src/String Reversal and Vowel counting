@@ -1,0 +1,32 @@
+# Logic : In python, you can reverse a string using slicing. [::-1]
+
+def reverse_string(s):
+    return s[::-1]
+
+original = "Hello"
+reversed_str = reverse_string(original)
+print(f"Original: {original}, Reversed: {reversed_str}")
+
+
+def reverse_string_loop(s):
+    reversed_str = ""
+    for char in s:
+        reversed_str = char + reversed_str # Add each character to the front
+    
+    return reversed_str
+
+
+# Count Vowels in a String
+# check if it is a vowel(a, e,i ,o,u) if yes, increament a counter
+
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    count= 0
+    for char in s:
+        if char in vowels:
+            count +=1
+    return count
+
+text = "Hello World"
+vowel_count = count_vowels(text)
+print(f"Number of vowels in '{text}': {vowel_count}")
