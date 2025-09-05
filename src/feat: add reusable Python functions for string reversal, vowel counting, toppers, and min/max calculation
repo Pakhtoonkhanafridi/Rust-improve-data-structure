@@ -1,0 +1,31 @@
+def reverse_string(s):
+    return s[::-1]
+
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    return sum(1 for  char in s if char in vowels)
+
+def find_toper(students):
+    max_marks = max(students.values())
+    toppers = [name for name, marks in students.items() if marks == max_marks]
+    return max_marks, toppers
+
+def find_min_max(numbers):
+    return min(numbers), max(numbers)
+
+if __name__ == "__main__":
+    print("Reversed string:", reverse_string("hello"))
+    
+    print("Vowel count:", count_vowels("Hello World"))
+    
+    students = {"khan": 85,  "Afri" : 92, "Pak": 78, "Pakk": 88}
+    max_marks, toppers = find_toper(students)
+    max_marks = max(students.values())
+    print(f"Highest marks: {max_marks}")
+    print("Topper(s):", ",".join(toppers))
+    
+    numbers = [45, 12, 67, 23, 89, 34]
+    min_val, max_val = find_min_max(numbers)
+    print(f"List: {numbers}")
+    print(f"Min: {min_val}, Max: {max_val}")
+        
