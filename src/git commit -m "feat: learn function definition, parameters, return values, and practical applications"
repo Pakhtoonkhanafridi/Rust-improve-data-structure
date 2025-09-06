@@ -1,0 +1,32 @@
+def greets_person(name):
+    print(f"Hello , {name}! ")
+    
+greets_person("Pak")
+greets_person("Afridi")
+
+def add_numbers(a, b):
+    result = a + b
+    return result # Send the result back value
+    
+sum_result = add_numbers(5, 6)
+print(f"the sum is : {sum_result}") 
+
+def celsius_to_fahrenheit(celsius):
+    fahrenheit = (celsius * (9/5) + 32)
+    return fahrenheit
+
+temp_c = 25
+temp_f = celsius_to_fahrenheit(temp_c)
+
+def count_vowels(text):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in text:
+        if char in vowels:
+            count += 1
+    return count
+    
+#Use the Function
+message = "Hello World"
+vowel_count = count_vowels(message)
+print(f"'{message}' has {vowel_count} vowels")
