@@ -1,0 +1,59 @@
+import math
+
+def is_prime(n):
+    """Check if a number is prime(optimized version). """
+    if n < 2:
+        return False
+    if n == 2:         # is the only even prime
+        return True
+    if n % 2 == 0:
+        return False
+    
+    # Check add divisors only, up to sqrt(n)
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % i == 0:
+            return False
+    
+    return True
+
+# Test the function
+print(is_prime(17)) # True
+print(is_prime(25)) # False (5*5)
+print(is_prime(2)) # True
+
+# 2
+## Test with various numbers
+test_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+print("Prime number check:")
+for num in test_numbers:
+    if is_prime(num):
+        print(f"{num} is prime ✓")
+    else:
+        print(f"{num} is not prime ✗")
+# 3
+
+#  ERROR Handling
+def is_prime(n):
+    """Check if a number is prime with input validation. """
+    try:
+        n = int(n) # Convert  to integer if possible
+    except (ValueError, TypeError):
+        return False # Not a valid number
+    
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    
+    for i in range(3, int(n**0.5) + 1, 2):
+        if n % i== 0:
+            return False
+    return True
+
+print(is_prime(29)) # True
+print(is_prime("29")) # True  (string converted to int)
+print(is_prime(4.0)) # False (Float converted to int)
+print(is_prime("abc")) # False (not a valid number)
