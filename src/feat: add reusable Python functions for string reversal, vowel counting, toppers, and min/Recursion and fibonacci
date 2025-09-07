@@ -1,0 +1,44 @@
+# without recursion
+def countdown(n):
+    for i in range(n, 0, -1):
+        print(i)
+    print("Blastoff!")
+countdown(7)
+
+# with recursion
+
+def countdown(n):
+    if n <= 0:
+        print("blastOff!")
+    else:
+        print(n)
+        countdown(n-1) # Call ourselves with n-1
+
+countdown(5)
+
+# factorial and fibonacci
+def factorial(n):
+    #Base caase: 0! =1
+    if n == 0:
+        return 1
+    
+    else:
+        return n * factorial(n - 1)
+
+# Test the function
+result = factorial(4)
+print(f"5! = {result}") # Output: 5! = 120
+
+def fibonacci(n):
+    # Base cases
+    if n == 0:
+        return 0
+    elif n ==1:
+        return 1
+    #Recursive case
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Test the function 
+for i in range(8):
+    print(f"fib({i}) = {fibonacci(i)}")
