@@ -1,0 +1,93 @@
+# Position parameters:
+def describe_pet(animal_type, pet_name):
+    """Display informatin about a pet."""
+    print(f"I have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}.\n")
+    
+describe_pet('hamster', 'harry')
+describe_pet('dog', 'willie')
+describe_pet('laptop', 'Samsung')
+
+# Key Arguments 
+describe_pet(animal_type='hamster', pet_name='harry')
+describe_pet(pet_name='harry' , animal_type='hamster')
+
+def describe_pete(pet_name, animal_type='dog'):
+    print(f"I have a{animal_type} name {pet_name.title()}.")
+
+describe_pete('willie') 
+describe_pete('harry', 'hamster')
+
+# Return values the Output
+#the return statement sends a value back to the line where the #function was called . This how the function "give back" results.
+
+def add_number(a, b):
+    result= a + b
+    print(f"The sum of a + b is {result}")
+
+add_number(5, 4) 
+
+def add_numbers(a, b):
+    result = a + b
+    return result # send the result back
+
+sum_result = add_numbers(7, 8)
+print(f"the sum is :{sum_result}")
+
+double_sum =add_numbers(5, 3) *  2 # 16
+print(f"Double  the sum: {double_sum}")
+
+final_result = add_numbers(add_numbers(2, 3), 4) # (2+3) + 4 = 9
+print(f"Final result:{final_result}")
+
+# Temperature
+def convert_temperature(value, from_unit, to_unit):
+    """Convert temperature between Celsius and Fahrenheit."""
+    if from_unit == 'C' and to_unit == 'F':
+        return (value * 9/5) + 32
+    elif from_unit == 'F' and to_unit == 'C':
+        return (value - 32) * 5/9
+    else:
+        return value # Same unit , no conversion
+    
+# Use the function
+c_temp = 25
+f_temp = convert_temperature(c_temp,'C','F')
+print(f"{c_temp}C = {f_temp} F") # Output: 25 C = 77.0 F
+
+# 3
+
+def calculate_grade(score, max_score=100):
+    """Calculate percentage and letter grade."""
+    percentage = (score / max_score) * 100
+    
+    if percentage >= 90:
+        grade = 'A'
+    elif percentage >= 80:
+        grade = 'B'
+    elif percentage >= 70:
+        grade = 'C'
+    else:
+        grade = 'F'
+    
+    return percentage, grade 
+
+score = 95
+percentage, grade = calculate_grade(score)
+print(f"Score: {score}/{100} = {percentage}% -> Grade: {grade}")
+
+#4
+
+def format_name(first_name, last_name, middle_name=''):
+   """ Return a properly formated full name """
+   if middle_name:
+       full_name= f"{first_name} {middle_name} {last_name}"
+   else:
+       full_name = f"{first_name} {last_name}"
+   return full_name.title()
+   
+name1 = format_name('john', 'doe')
+name2 = format_name('mary', 'smith', 'anne')
+print(name1)
+print(name2)
+    
