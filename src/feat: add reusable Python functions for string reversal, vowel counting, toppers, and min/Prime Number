@@ -1,0 +1,16 @@
+limit = int(input("Find primes up to what number? "))
+
+prime_list = []
+
+for number in range(2, limit + 1):
+    is_prime = True  # Let's assume the number is prime to start
+    
+    for divisor in range(2, int(number ** 0.5) + 1):
+        if number % divisor == 0:  # If it divides evenly
+            is_prime = False       # It's not prime
+            break                  # Stop checking
+
+    if is_prime:
+        prime_list.append(number)
+
+print("Prime numbers up to", limit, "are:", prime_list)
