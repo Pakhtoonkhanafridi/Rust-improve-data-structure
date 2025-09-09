@@ -1,0 +1,39 @@
+n = int(input("What number do you want to factor? "))
+original = n 
+factors = []
+
+divisor = 2
+
+while n > 1:
+    while n % divisor == 0:
+        factors.append(divisor)
+        n = n //divisor
+        
+    divisor += 1
+
+print("Prime factors of", original, "are", factors)
+
+# 2 pair of  prime numbers
+
+def get_primes(limit):
+    primes = []
+    for num in range(2, limit + 1):
+        is_prime = True
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(num)
+    return primes
+
+limit = int(input("Find twin primes up to what number? "))
+primes = get_primes(limit)
+
+twin_pairs = []
+for i in range(len(primes) -1):
+    if primes[i + 1] - primes[i] == 2:
+       twin_pairs.append((primes[i], primes[i + 1]))
+print("Twin prime pairs up to", limit, "are:")
+for pair in twin_pairs:
+    print(pair)
