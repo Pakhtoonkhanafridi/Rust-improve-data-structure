@@ -1,0 +1,79 @@
+my_list =[10, 20, 30, 40]
+print(my_list[2]) 
+
+window = []
+for num in my_list:
+    window.append(num)
+    if len(window)> 2:
+        window.pop(0)
+    print("Current window:", window)
+    
+    left = 0 
+    right = len(my_list) -1
+    while left < right :
+        print(f"Left: {my_list[left]}, Right : {my_list[right]}")
+        left += 1
+        right -= 1
+
+graph_nodes = {
+    (0, 0): "Start",
+    (1, 2): "Obstacle",
+    (3, 4): "Goal"
+}
+print(graph_nodes[(1, 2)]) 
+
+def min_max(numbers):
+    return min(numbers), max(numbers) #
+
+result = min_max([5, 2, 8, 1, 9])
+min_val, max_val = result
+
+numbers = [1, 2, 2, 3, 4, 4, 5]
+unique_numbers = set(numbers)
+
+primes = {2, 3, 5, 7, 11}
+print(5 in primes)
+
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+common = set(list1) & set(list2)
+
+# 1. Frequency counter pattern - O(n) time
+word = "hello"
+freq = {}
+for char in word:
+    freq[char] = freq.get(char, 0) + 1
+print(freq)
+
+# 2. Two-sum problem (classi interview question)
+def two_sum(nums, target):
+    seen = {} # value  -> index
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i
+    return []
+
+# 3.Graph representatioon (nodes and connections)
+graph = {
+    'A': ['B', 'C'],
+    'B': ['B', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
+
+# step 3  Implement the Algorithem
+#Example: Find first duplicate
+def first_duplicate(nums):
+    seen = set() # We choose set for O(1) check
+    for num in seen:
+        if num in seen: # Fast 0(1) check
+            return num
+        seen.add(num)
+    return -1 
+# Time Complexity: O(n)
+# Space Complexity:O(n)
+    
