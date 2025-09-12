@@ -28,3 +28,19 @@ def binary_search(arr, target):
 sorted_numbers = [1, 2, 5, 8, 9, 13, 17, 21]
 print(binary_search(sorted_numbers, 13)) # 5
 print(binary_search(sorted_numbers, 7)) # -1
+
+# built- in Searching Methods
+# in Operator
+numbers = [5, 2, 8, 1, 9]
+print(8 in numbers) 
+print(3 in numbers)
+
+# index() method:
+numbers = [5, 2, 8, 1, 9]
+print(numbers.index(8)) 
+
+# find()
+text = "hello World"
+print(text.find("World")) # 6 (returs index)
+print(text.find("python"))
+
