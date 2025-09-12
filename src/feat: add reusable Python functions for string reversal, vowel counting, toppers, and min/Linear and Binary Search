@@ -44,3 +44,19 @@ text = "hello World"
 print(text.find("World")) # 6 (returs index)
 print(text.find("python"))
 
+#Binary Search Recursive Version
+def binary_search_recursive(arr, target, left, right):
+    if left > right:
+        return -1
+    
+    mid = (left + right ) // 2
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        return binary_search_recursive(arr, target, mid + 1, right)
+    else:
+        return binary_search_recursive(arr, target, left, mid -1)
+
+sorted_nums = [1, 2, 5, 8, 9, 13, 17, 21]
+result = binary_search_recursive(sorted_nums, 13, 0, len(sorted_nums)-1)
+print(result)
