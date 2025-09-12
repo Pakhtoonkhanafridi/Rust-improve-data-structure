@@ -1,0 +1,30 @@
+# Leaner Search : The Simple Way (Brute Force)
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i  # Return index where found
+    return -1 # retrun -1 if not found
+
+numbers = [5, 2, 8, 1, 9]
+print(linear_search(numbers, 8)) 
+print(linear_search(numbers, 3))
+
+# Binary search
+def binary_search(arr, target):
+    left, right = 0, len(arr) -1
+    
+    while left <= right:
+        mid = (left + right)//2 # Find middle index
+        
+        if arr[mid] == target:
+            return mid # Found!
+        elif arr[mid] < target:
+            left = mid + 1 # Search right half
+        else:
+            right = mid -1 # Search left half
+    
+    return -1
+
+sorted_numbers = [1, 2, 5, 8, 9, 13, 17, 21]
+print(binary_search(sorted_numbers, 13)) # 5
+print(binary_search(sorted_numbers, 7)) # -1
