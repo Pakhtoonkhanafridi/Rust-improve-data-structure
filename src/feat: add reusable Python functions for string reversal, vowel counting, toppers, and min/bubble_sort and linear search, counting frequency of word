@@ -66,3 +66,28 @@ freq = count_word_frequency(text)
 print("Word frequencies:")
 for word, count in freq.items():
     print(f"{word}: {count}")
+
+#  check the palindrome
+def is_palindrome(s):
+    """
+    Checks if a string is a palindrome.
+    Returns True if palindrome, False otherwise.
+    """
+    # Clean the string : remove spaces, punction, and make lowercase
+    cleaned = ''.join(char.lower() for char in s if char.isalnum())
+    
+    # Checks if cleaned string equals it reverse
+    return cleaned == cleaned[::-1]
+
+test_strings = [
+        "racecar",
+        "Hello",
+        "A man a plan a canal panama",
+        "12321",
+        "Python"
+]
+    
+for test in test_strings:
+        result = is_palindrome(test)
+        print(f"'{test}' -> {'Palindrome' if result else 'Not palinrome'}")
+        
