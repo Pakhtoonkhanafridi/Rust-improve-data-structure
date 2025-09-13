@@ -39,3 +39,30 @@ else:
     print(f"Element {target} not found in the list")
 
 print(linear_search(numbers, 100)) 
+
+#3 Count Frequency of Words in a String
+def count_word_frequency(text):
+    """
+    Counts frequency of each word in string. 
+    Returns a dictionary with word frequencies.
+    """
+    #  Convert to lowercase and split in words
+    words = text.lower().split()
+    frequency = {}
+    
+    for word in words:
+        # Remove punction if needed (basic version)
+        word = word.strip('.,!?;:"')
+        #counting frequency(word) 
+        if word in frequency:
+            frequency[word] += 1
+        else:
+            frequency[word] = 1
+    return frequency
+# test the function
+text = "Hello world hello python world python programming"
+freq = count_word_frequency(text)
+
+print("Word frequencies:")
+for word, count in freq.items():
+    print(f"{word}: {count}")
