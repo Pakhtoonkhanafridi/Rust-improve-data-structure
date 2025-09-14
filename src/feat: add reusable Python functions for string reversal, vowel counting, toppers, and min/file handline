@@ -1,0 +1,19 @@
+# file = open("filenname.txt", "mode") # "r" for read, 'w' for write
+
+# # 2 Do stUff with the file 
+# # - Read content 
+# # - Write new content
+
+# # 3. Close the file 
+# file.close()
+
+# #with open ('filename.txt', "mode") as file:
+# with open ("example.txt", "r") as file:\content = file.read() 
+# # Reads everythin as one big string
+#       content = file.read()
+#       print(content)
+with open("example.txt", "r") as file:
+    lines = file.readlines() # Returns list of lines
+    for line in lines:
+        print(f"Line: {line.strip()}")
+        
