@@ -22,4 +22,9 @@ with open("example.txt", "r") as file:
     for line in lines:
         print(f"Line: {line.strip()}")
 
+# Writing Files (writing in the Notebook)
+ # Method 1 : Write to file (overwrites everything!)
+with open("output.txt", "w") as file:
+    file.write("Hello, World!\n") # \n create a new line
+    file.write("This is a new file.")
         
