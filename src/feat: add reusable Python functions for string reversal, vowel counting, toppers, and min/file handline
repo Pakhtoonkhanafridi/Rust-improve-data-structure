@@ -16,4 +16,10 @@ with open("example.txt", "r") as file:
     lines = file.readlines() # Returns list of lines
     for line in lines:
         print(f"Line: {line.strip()}")
+# 3
+with open("example.txt", "r") as file:
+    lines = file.readlines() # Return list of lines
+    for line in lines:
+        print(f"Line: {line.strip()}")
+
         
