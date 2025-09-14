@@ -27,4 +27,12 @@ with open("example.txt", "r") as file:
 with open("output.txt", "w") as file:
     file.write("Hello, World!\n") # \n create a new line
     file.write("This is a new file.")
-        
+
+#Methone 2: Append to a file(adds to the end)
+with open("output.txt", "a") as file:
+    file.write("\nThis line was added later.")
+
+lines_to_write = ["Line 1\n", "line 2\n", "Line 3\n"]
+with open("output.txt", "w") as file
+     file.writelines(lines_to_write)
+    
