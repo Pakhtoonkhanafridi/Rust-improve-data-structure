@@ -11,3 +11,13 @@ with open("story.txt", "r") as file:
         word_count += len(words)
 
 print(f"The file has {line_count} lines and {word_count} words.")
+
+              # 2
+# Write data to a file
+# Save user input to a file
+user_text = input("Enter text to save: ")
+
+with open("user_data.txt", "w") as file:
+    file.write(user_text)
+
+print("Text saved successfully!")
