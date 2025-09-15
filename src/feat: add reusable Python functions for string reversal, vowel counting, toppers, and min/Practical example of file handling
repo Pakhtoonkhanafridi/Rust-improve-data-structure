@@ -1,0 +1,13 @@
+                # 1
+# Read a file and process its content
+# count lines and words in a life
+with open("story.txt", "r") as file:
+    lines = file.readlines()
+    line_count = len(lines)
+    work_count = 0
+    
+    for line in lines:
+        words = line.split() # split line into words
+        word_count += len(words)
+
+print(f"The file has {line_count} lines and {word_count} words.")
