@@ -30,3 +30,17 @@ with open("source.txt", "r") as source:
         destination.write(content)
 
 print("File copied successfuly !")
+
+             #4
+
+# Read a file with comma-separated values
+with open("data.csv", "r") as file:
+    for line in file:
+        values = line.strip().split(",")
+        print(f"Name: {values[0]}, Age: {values[1]}, City: {values[2]}")
+
+
+
+
+
+         
