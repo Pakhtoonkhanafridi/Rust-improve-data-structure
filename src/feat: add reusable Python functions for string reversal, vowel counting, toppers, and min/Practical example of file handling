@@ -21,3 +21,12 @@ with open("user_data.txt", "w") as file:
     file.write(user_text)
 
 print("Text saved successfully!")
+
+              # 3
+#Coy content from one file to another
+with open("source.txt", "r") as source:
+    with open("copy.txt", "w") as destination:
+        content = source.read()
+        destination.write(content)
+
+print("File copied successfuly !")
