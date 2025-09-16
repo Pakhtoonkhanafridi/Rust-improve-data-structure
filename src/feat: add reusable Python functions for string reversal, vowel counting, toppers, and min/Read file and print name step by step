@@ -1,0 +1,16 @@
+def read_and_print_names():
+    """
+    Reads the names from the file and print them line by line.
+    """
+    try:
+        with open("names.txt", "r") as file:
+            print("Names in the file:")
+            print("-" * 20)
+            
+            for line_number, line in enumerate(file, 1):
+                name = line.strip() # Remove any extra spaces/newlines
+                print(f"{line_number}. {name}")
+    except FileNotFoundError:
+        print("Error: The file  'names.txt' was not found.")
+        print("please run the first program to create the file.")
+read_and_print_names()
