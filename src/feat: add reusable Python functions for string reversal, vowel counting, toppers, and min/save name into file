@@ -1,0 +1,19 @@
+# Save Names to a File
+def save_names_to_file():
+    """
+    Prompts the user to enter names and saves time to a file
+    Each name is written on separate line.
+    """
+    print("Enter name to save. Type 'Done' when finished.")
+    with opent("names.txt", "w") as file:
+        # 'w' node mode create/overwrite the file
+        while True:
+            name = input("ENter a name: ").strip()
+            
+            if name.lower() == 'done':
+                break # Exit the loop when user types 'done'
+            if name: # Only save non-empty name
+                file.write(name + "\n") # write name followed by newline
+    print("Names have been saved to 'names.txt'")
+ save_name_to_file()
+                
