@@ -1,0 +1,42 @@
+class Dog:
+    # the __init__ method is the constructor
+    # It runs automatically when we create a new Dog object
+    def __init__(self, name,age):
+        self.name = name # attribute : the dog's name
+        self.age = age   # Attribute: the dog's age
+    
+    # Method: something the dog can do 
+    def bark(self):
+        print(f"{self.name} says: Woof! Woof!")
+    
+    def have_birthday(self):
+        self.age += 1
+        print(f"Happy birthday {self.name}!  you are now {self.age} years old.")
+
+# Object
+class Dog:
+    # the __init__ method is the constructor
+    # It runs automatically when we create a new Dog object
+    def __init__(self, name,age):
+        self.name = name # attribute : the dog's name
+        self.age = age   # Attribute: the dog's age
+    
+    # Method: something the dog can do 
+    def bark(self):
+        print(f"{self.name} says: Woof! Woof!")
+    
+    def have_birthday(self):
+        self.age += 1
+        print(f"Happy birthday {self.name}!  you are now {self.age} years old.")
+
+dog1 = Dog("Buddy", 3) # uses the blueprint to create a dog
+dog2 = Dog("Luna", 2) # Another dog from the same blueprint
+# Each object has its own attributes
+print(dog1.name) # Output: Buddy
+print(dog2.name) # Output: Luna
+print(dog1.age) # Ouput : 3
+print(dog2.age) # Output: 2
+# Each object can use the methods
+dog1.bark() # Output : Buddy says: Woof! Woof!
+dog2.bark() # Ouput : Luna says : Woof! Woof!
+dog1.have_birthday()
