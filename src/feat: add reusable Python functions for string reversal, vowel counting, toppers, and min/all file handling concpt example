@@ -1,0 +1,31 @@
+# ALl in one program
+def main():
+    """
+    Main menu for the file operations program.
+    """
+    while True:
+        print("\n=== File operations Menu ===")
+        print("1. Save names to file")
+        print("2. Road and display names")
+        print("3. Count word frequency")
+        print("4. Exit")
+        
+        choice = input("Enter your choice (1-4):")
+        
+        if choice == '1':
+            save_names_to_file()
+        elif choice == '2':
+            read_and_print_names()
+        elif choice == '3':
+            filename = input("ENter filename to analyze: ")
+            word_counts = count_word_frequency(filename)
+            display_word_frequency(word_counts)
+        elif choice == '4':
+            print("Goodbye!")
+            break
+        else:
+            print("Inavalid choice. Please try again.")
+# Run the complete program
+if __name__ == "__main__":
+    main()
+            
