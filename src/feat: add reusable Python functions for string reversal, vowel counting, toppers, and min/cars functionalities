@@ -1,0 +1,20 @@
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.is_running = False
+    
+    def start_engine(self):
+        self.is_running = True
+        print(f"The {self.make} {self.model} 's engine is now running.")
+        
+    def stop_engine(self):
+        self.is_running = False
+        print(f"The {self.make} {self.model}'s engine has stopped")
+        
+# test it 
+my_car = Car("Toyota", "Camry", 2020)
+my_car.start_engine()
+print(f"Is running: {my_car.is_running}")
+my_car.stop_engine()
