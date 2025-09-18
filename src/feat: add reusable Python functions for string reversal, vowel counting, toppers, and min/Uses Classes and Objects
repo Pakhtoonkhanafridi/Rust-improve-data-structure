@@ -1,0 +1,22 @@
+# why Use Classes and Objects?
+#Organization: Keeps related data functions together
+# Without classes (messy)
+dog1_name = "Buddy"
+dog1_age = 3
+dog1_bread = "Golden Retriever"
+
+def dog_bark(name):
+    print(f"{name} says woof!")
+
+# WIth classes (organized)
+class Dog:
+    def __init__(self, name, age, breed):
+        self.name = name
+        self.age = age
+        self.breed = breed
+    
+    def bark(self):
+        print(f"{self.name} says woof!")
+
+my_dog = Dog("Buddy", 3, "Golden Retriever")
+my_dog.bark()
