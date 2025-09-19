@@ -14,3 +14,22 @@ print(dog1.name) # buddy
 print(dog2.name) # Luma (different form buddy)
 
 print(dog2.breed)
+
+# task 2
+
+class Dog:
+    # class attribute (should by all dogs)
+    species = "Canis lupus familiaries"
+    
+    def __init__(self, name, breed):
+        self.name = name # Instance attribute
+        self.breed = breed # Instance attribute
+        
+# all dogs share the same species
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Luna", "huskay")
+
+print(dog1.species) # Canis lupus familiaris 
+print(dog2.species) # Canis lupus familiars (same for all dogs)
+
+# task 3
