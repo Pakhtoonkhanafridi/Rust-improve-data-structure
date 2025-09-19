@@ -1,0 +1,16 @@
+# task 1
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed =breed
+        self.age = 0
+# instance attributes
+
+# Each dog has its own name, vreed and age
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Luna", "Husky")
+
+print(dog1.name) # buddy
+print(dog2.name) # Luma (different form buddy)
+
+print(dog2.breed)
