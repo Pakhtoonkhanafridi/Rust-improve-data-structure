@@ -33,3 +33,15 @@ print(dog1.species) # Canis lupus familiaris
 print(dog2.species) # Canis lupus familiars (same for all dogs)
 
 # task 3
+class BankAccount:
+    def __init__(self, account_holder, balance):
+        self.account_holder = account_holder #public attribute
+        self._balance =balance # Public attibute (convention)
+        self.__secret_code = 12345 # Name mangling (more private)
+        
+        # It is a convention to treat _attribute as "don't touch directly"
+account = BankAccount("Kha", 1000)
+print(account.account_holder) # Ok _ public 
+print(account._balance) # Possible but discouraged
+# print(account.__secret_code) # THis would casue an error
+
