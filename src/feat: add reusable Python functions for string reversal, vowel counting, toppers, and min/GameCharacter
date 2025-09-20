@@ -24,3 +24,16 @@ class GameCharacter:
     def heal(self, amount):
         self.health += amount
         print(f"{self.name} healed {amount} health points.")
+
+    def add_to_inventory(self, item):
+        self.inventory.append(item)
+        print(f"{item} added to {self.name}'s inventory")
+    @classmethod
+    def update_game_version(cls, new_version):
+        cls.gamer_version = new_version
+        print(f"Game updated to version {new_version}")
+    
+    # specail method
+    def __str__(self):
+        return f"{self.name} (level {self.level} {self.character_class})"
+
