@@ -10,7 +10,8 @@ class GameCharacter:
         self.level = 1
         self.experience= 0
         self.inventory = []
-
+    
+    #Instance Methods 
     def attack(self):
         print(f"{self.name} attacts!")
         return 10 * self.level # Simple damage calculation
@@ -24,7 +25,7 @@ class GameCharacter:
     def heal(self, amount):
         self.health += amount
         print(f"{self.name} healed {amount} health points.")
-
+    
     def add_to_inventory(self, item):
         self.inventory.append(item)
         print(f"{item} added to {self.name}'s inventory")
@@ -47,3 +48,5 @@ damage = hero.attack() # aragorn attacks!
 hero.take_damage(30) # Arogarn took 30 damage. Health: 70
 hero.heal(20) # Arogarn healed 20 health points
 
+GameCharacter.update_game_version("1.1")
+print("Current game version:", hero.game_version)
