@@ -37,3 +37,13 @@ class GameCharacter:
     def __str__(self):
         return f"{self.name} (level {self.level} {self.character_class})"
 
+hero = GameCharacter("Aragon", "Warrior")
+print(hero)  # Aragon (Level 1 Warrior)
+
+hero.add_to_inventory("Sword")
+hero.add_to_inventory("Shield")
+
+damage = hero.attack() # aragorn attacks!
+hero.take_damage(30) # Arogarn took 30 damage. Health: 70
+hero.heal(20) # Arogarn healed 20 health points
+
