@@ -10,3 +10,17 @@ class GameCharacter:
         self.level = 1
         self.experience= 0
         self.inventory = []
+
+    def attack(self):
+        print(f"{self.name} attacts!")
+        return 10 * self.level # Simple damage calculation
+    
+    def take_damage(self, damage):
+        self.health -=damage
+        if  self.health <= 0 :
+            print(f"{self.name} has been defeated!")
+        else:
+            print(f"{self.name} took {damage} damage. Health: {self.health}")
+    def heal(self, amount):
+        self.health += amount
+        print(f"{self.name} healed {amount} health points.")
