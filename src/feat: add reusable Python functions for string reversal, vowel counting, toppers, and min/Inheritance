@@ -5,3 +5,12 @@ class Animal:
         print("Some generic animal sound")
     def sleep(self):
         print(f"{self.name} is sleeping ... zzz")
+
+#Child class (derived class) -inheritance form Animal
+class Dog(Animal): # Dog inherits from Animal
+    def bark(self):
+        print(f"{self.name} syas: Woof! Woof!")
+    #overid the parent's speak method
+    def speak(self):
+        self.bark()
+
