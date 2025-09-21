@@ -19,3 +19,9 @@ class Cat(Animal):  # Cat inherits from Animal
         print(f"{self.name} says: Meow!")
     def speak(self):
         self.meow()
+
+my_dog = Dog("Buddy")
+my_dog.speak() 
+
+my_dog.bark()
+my_dog.speak()
