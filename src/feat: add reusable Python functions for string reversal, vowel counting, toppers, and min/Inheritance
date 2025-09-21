@@ -13,7 +13,7 @@ class Dog(Animal): # Dog inherits from Animal
     #overid the parent's speak method
     def speak(self):
         self.bark()
-
+# Another child class
 class Cat(Animal):  # Cat inherits from Animal
     def meow(self):
         print(f"{self.name} says: Meow!")
@@ -25,3 +25,12 @@ my_dog.speak()
 
 my_dog.bark()
 my_dog.speak()
+
+my_cat = Cat("Whiskers")
+my_cat.sleep()
+
+my_cat.meow()
+my_cat.speak()
+
+        
+    
