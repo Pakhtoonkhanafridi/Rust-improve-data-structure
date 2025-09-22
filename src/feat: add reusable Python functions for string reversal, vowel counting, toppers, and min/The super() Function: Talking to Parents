@@ -1,0 +1,12 @@
+class Vehicle:
+    def __init__(self,make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.is_running = False
+   def start_engine(self):
+        self.is_running = True
+        print("Engine start")
+    def stop_engine(self):
+        self.is_running = False
+        print("Engine stopped")
