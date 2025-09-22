@@ -10,3 +10,17 @@ class Vehicle:
     def stop_engine(self):
         self.is_running = False
         print("Engine stopped")
+class Car(Vehicle):
+    def __init__(self, make, model, year, num_doors):
+        #Call the parent's __init__ method first
+        super().__init__(make, model, year)
+        # Then add Car_specific attributes
+        self.num_doors = num_doors
+        self.fuel_level = 100
+    
+    def start_engine(self)
+    if self.fuel_level > 0:
+        super().start_engine()
+        print("Car is ready to drive!")
+    else:
+        print("Cannot start - out of fuel!")
