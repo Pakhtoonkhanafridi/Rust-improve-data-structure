@@ -2,7 +2,7 @@
 class GameCharacter:
     def __init__(self, name, health):
         self.name = name
-        self.health = name
+        self.health = health
         self.level = 1
     def take_damage(self, damage):
         self.health -= damage
@@ -19,13 +19,13 @@ class Warrior(GameCharacter):
         super().__init__(name, health)
         self.strength = 10
     def attack(self):
-        damage = self.strenght * 2
+        damage = self.strength * 2
         print(f"{self.name} swings a mighty sword fo {damage} damage")
         return damage
 # Maage specializtion
 class Mage(GameCharacter):
     def __init__(self, name, health=88):
-        super().__init(name, health)
+        super().__init__(name, health)
         self.magic_power = 15
         self.mana = 100
     def cast_spell(self):
@@ -37,3 +37,11 @@ class Mage(GameCharacter):
         else:
             print(f"{self.name} doesn't have enough mana!")
             return 0
+warrior = Warrior("Conan")
+mage = Mage("Gandalf")
+
+warrior_attack = warrior.attack()
+# Conan swings a  might sword for damage!
+mage.take_damage(warrior_attack) # Gandalf took 20 damage. health : 600
+mage_attack = mage.cast_spell()
+warrior.take_damage(mage_attack)
