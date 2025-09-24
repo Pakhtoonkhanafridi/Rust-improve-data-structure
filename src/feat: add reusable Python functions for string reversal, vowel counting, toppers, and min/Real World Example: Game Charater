@@ -1,0 +1,24 @@
+# base class for all game characters
+class GameCharacter:
+    def __init__(self, name, health):
+        self.name = name
+        self.health = name
+        self.level = 1
+    def take_damage(self, damage):
+        self.health -= damage
+        if self.health <= 0:
+            print(f"{self.name} has been defeated!")
+        else:
+            print(f"{self.name} took {damage} damage. Health: {self.health}")
+    def heal(self, amount):
+        self.health += amount
+        print(f"{self.name} healed {amount} health points.")
+class Warrior(GameCharacter):
+    def __init__(self, name, health=150):
+        # Warriors have more health
+        super().__init__(name, health)
+        self.strength = 10
+    def attack(self):
+        damage = self.strenght * 2
+        print(f"{self.name} swings a mighty sword fo {damage} damage")
+        return damage
