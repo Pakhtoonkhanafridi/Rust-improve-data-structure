@@ -1,0 +1,32 @@
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def introduce(self):
+        print(f"Hi, I'm {self.name}, {self.age} years old.")
+
+# Parent class
+class Employee(Person):
+    def __init__(self, name, age, employee_id):
+        super().__init__(name, age)
+        self.employee_id = employee_id
+        self.salary = 0
+    def work(self):
+        print(f"{self.name} is working hard!")
+#Child class
+class Manager(Employee):
+    def __init__(self, name, age, employee_id, department):
+        super().__init__(name, age, employee_id)
+        self.department = department
+        self.team_size = 0
+    def conduct_meeting(self):
+        print(f"Manager {self.name} is conducting a meeting for {self.department} department")
+        #override work method
+        def work(self):
+            print(f"{self.name} is managing the {self.department} team")
+# Using multi-level inheritance
+manager = Manager("Alice", 35, "M123", "Engineering")
+manager.introduce() # From Person: Hi , I'm Alice, 35 years old.
+print(manager.employee_id) # From Emplolyee: M123
+manager.work() #From Manager: Alice is managing the engineering team
+manager.conduct_meeting() # Manager-specific: Manager Alice i conducting a meeting ...
