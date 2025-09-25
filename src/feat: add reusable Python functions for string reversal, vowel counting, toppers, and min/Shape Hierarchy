@@ -1,0 +1,41 @@
+import math
+class Shape:
+    """ Parent class for all shapes"""
+    def area(self):
+        raise NotImplemented("SUbstance must implement this method")
+    def perimeter(self):
+        raise NotImlplementError("Subvlasses must implement this method")
+    def describe(self):
+        return f"This is a {self.__class__.__name__}"
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+    def is_square(self):
+        return self.width == self.height 
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return math.pi * self.radius ** 2
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+    def circumference(self):
+        return self.perimeter()
+print("=== Shape Hierarchy ===")
+rectangle =Rectangle(5, 3)
+circle = Circle(4)
+
+print(rectangle.describe())
+print(f"Area: {rectangle.area()}")
+print(f"Perimeter: {rectangle.perimeter()}")
+print(f"Is square: {rectangle.is_square()}")
+
+print(f"\n{circle.describe()}")
+print(f"Area: {circle.area():.2f}")
+print(f"Circumference: {circle.circumference():.2f}")
