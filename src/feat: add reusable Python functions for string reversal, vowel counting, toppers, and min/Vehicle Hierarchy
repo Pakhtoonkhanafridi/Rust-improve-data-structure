@@ -38,3 +38,16 @@ class Car(Vehicle):
     def close_trunk(self):
         self.trunk_open = False
         print("Trunk closed")
+class Motorcycle(Vehicle):
+    def __init__(self, make, model, year, fuel_type, engine_size):
+        super().__init__(make, model, year, fuel_type)
+        self.engine_size = engine_size
+        self.helmet_on = False
+    def wheelie(self):
+        if self.is_running and self.speed > 20:
+            print("Doing a wheelie! ")
+        else: 
+            print("Too slow for a wheelie")
+    def put_on_helmet(self):
+        self.helmet_on = True
+        print("Helmet secured")
