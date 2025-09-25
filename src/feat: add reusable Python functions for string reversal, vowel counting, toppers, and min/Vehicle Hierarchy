@@ -27,3 +27,14 @@ class Vehicle:
             print(f"Accelerating to {self.speed} km/h")
         else:
             print("Start the vehicle first!")
+class Car(Vehicle):
+    def __init__(self, make, model, year, fuel_type, num_doors):
+        super().__init__(make, model, year, fuel_type)
+        self.num_doors = num_doors
+        self.trunk_open = False
+    def open_trunk(self):
+        self.trunk_open = True
+        print("Trunk opened")
+    def close_trunk(self):
+        self.trunk_open = False
+        print("Trunk closed")
