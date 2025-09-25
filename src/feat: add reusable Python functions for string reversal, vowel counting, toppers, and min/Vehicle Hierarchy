@@ -1,0 +1,29 @@
+class Vehicle:
+    """Parent class for all vehicles"""
+    def __init__(self, make, model, year, fuel_type):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.fuel_type = fuel_type
+        self.is_running = False
+        self.speed = 0
+        
+    def start(self):
+        if not self.is_running:
+            self.is_running = True
+            print(f"{self.make} {self.model} started")
+        else:
+            print("Vehicle is already running")
+    def stop(self):
+        if self.is_running:
+            self.is_running = False
+            self.speed = 0
+            print(f"{self.make} {self.model} stopped")
+        else:
+            print("Vehicle is already stopped")
+    def accelerate(self, amount):
+        if self.is_running:
+            self.speed += amount
+            print(f"Accelerating to {self.speed} km/h")
+        else:
+            print("Start the vehicle first!")
