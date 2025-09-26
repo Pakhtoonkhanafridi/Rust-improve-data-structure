@@ -1,5 +1,4 @@
 class Vehicle:
-    """Parent class for all vehicles"""
     def __init__(self, make, model, year, fuel_type):
         self.make = make
         self.model = model
@@ -7,13 +6,14 @@ class Vehicle:
         self.fuel_type = fuel_type
         self.is_running = False
         self.speed = 0
-        
+    
     def start(self):
         if not self.is_running:
             self.is_running = True
             print(f"{self.make} {self.model} started")
         else:
             print("Vehicle is already running")
+    
     def stop(self):
         if self.is_running:
             self.is_running = False
@@ -21,33 +21,77 @@ class Vehicle:
             print(f"{self.make} {self.model} stopped")
         else:
             print("Vehicle is already stopped")
+    
     def accelerate(self, amount):
         if self.is_running:
             self.speed += amount
             print(f"Accelerating to {self.speed} km/h")
         else:
             print("Start the vehicle first!")
+
 class Car(Vehicle):
     def __init__(self, make, model, year, fuel_type, num_doors):
         super().__init__(make, model, year, fuel_type)
         self.num_doors = num_doors
         self.trunk_open = False
+    
     def open_trunk(self):
         self.trunk_open = True
         print("Trunk opened")
+    
     def close_trunk(self):
         self.trunk_open = False
         print("Trunk closed")
+
 class Motorcycle(Vehicle):
     def __init__(self, make, model, year, fuel_type, engine_size):
         super().__init__(make, model, year, fuel_type)
         self.engine_size = engine_size
         self.helmet_on = False
+    
     def wheelie(self):
         if self.is_running and self.speed > 20:
-            print("Doing a wheelie! ")
-        else: 
+            print("Doing a wheelie! 🏍️")
+        else:
             print("Too slow for a wheelie")
+    
     def put_on_helmet(self):
         self.helmet_on = True
         print("Helmet secured")
+
+class Truck(Vehicle):
+    def __init__(self, make, model, year, fuel_type, cargo_capacity):
+        super().__init__(make, model, year, fuel_type)
+        self.cargo_capacity = cargo_capacity
+        self.current_cargo = 0
+    
+    def load_cargo(self, weight):
+        if self.current_cargo + weight <= self.cargo_capacity:
+            self.current_cargo += weight
+            print(f"Loaded {weight} kg. Total cargo: {self.current_cargo} kg")
+        else:
+            print("Cannot load - exceeds cargo capacity!")
+    
+    def unload_cargo(self):
+        print(f"Unloaded {self.current_cargo} kg of cargo")
+        self.current_cargo = 0
+
+
+print("\n=== Vehicle Hierarchy ===")
+car = Car("Toyota", "Camry", 2020, "Gasoline", 4)
+motorcycle = Motorcycle("Harley-Davidson", "Sportster", 2021, "Gasoline", 1200)
+truck = Truck("Ford", "F-150", 2019, "Diesel", 2000)
+
+car.start()
+car.accelerate(30)
+car.open_trunk()
+
+motorcycle.put_on_helmet()
+motorcycle.start()
+motorcycle.wheelie()  
+motorcycle.accelerate(40)
+motorcycle.wheelie()  
+
+truck.load_cargo(500)
+truck.load_cargo(800)
+truck.load_cargo(900)  
