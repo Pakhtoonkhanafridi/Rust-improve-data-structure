@@ -1,0 +1,114 @@
+class ElectronicDevice:
+    """Parent class for all electroncie devices"""
+    def __init__(self, brand, model, battery_capacity):
+        self.brand = brand
+        self.model = model
+        self.battery_capacity = battery_capacity
+        self.is_powered_on = False
+        self.battery_level = 100
+        self.is_charging = False
+    def power_on(self):
+        if not self.is_powered_on:
+            if self.battery_level > 5:
+                self.is_powered_on = True
+                print(f"{self.brand} {self.model} is now ON")
+            else:
+                print("Battery too low - please charge first")
+        else:
+            print("Device is already ON")
+    def power_off(self):
+        if self.is_powered_on:
+           self.is_powered_on =False
+           print(f"{self.brand} {self.model} is now OFF")
+        
+        else:
+            print("Device is already OFF")
+    def charge(self):
+        self.is_charging = True
+        print("Chargin started...")
+        
+    def stop_chargin(self):
+        self.is_charging = False
+        print("Charging stopped")
+class Phone(ElectronicDevice):
+    def __init__(self, brand, modal, battery_capacity, screen_size):
+        super().__init__(brand, modal, battery_capacity)
+        self.screen_size = screen_size
+        self.phone_number = ""
+        self.contracts = []
+    def make_call(self, number):
+        if self.is_powered_on:
+            print(f" Calling {number}...")
+        else:
+            print("Phone is off - cannot make call")
+    def send_message(self, number, message):
+        if self.is_powered_on:
+            print(f" Sending message to {number}: {message}")
+        else:
+            print("Phone is off - cannot send message")
+    def add_contracts(self, name, number):
+        self.contracts.append((name, number))
+        print(f" Contact '{name}' added")
+class Laptop(ElectronicDevice):
+    def __init__(self, brand, model, battery_capacity, ram, storage):
+        super().__init__(brand, model, battery_capacity)
+        self.ram = ram
+        self.storage = storage
+        self.open_programs = []
+    def open_program(self, program_name):
+        if self.is_powered_on:
+            self.open_programs.append(program_name)
+            print(f" Opening {program_name}...")
+        else:
+            print("Laptop is off - cannot open program")
+    
+    def close_program(self, program_name):
+        if program_name in self.open_programs:
+            self.open_programs.remove(program_name)
+            print(f" Closed {program_name}")
+    def coding_session(self):
+        if self.is_powered_on:
+            print(" Starting coding session...")
+            self.open_program("VS Code")
+            self.open_program("Terminal")
+class Tablet(ElectronicDevice):
+    def __init__(self, brand, model, battery_capacity, has_cellular):
+        super().__init__(brand, model, battery_capacity)
+        self.has_cellular = has_cellular
+        self.current_app = None
+    def open_app(self, app_name):
+        if self.is_powered_on:
+            self.current_app = app_name
+            print(f"Opening {app_name} on tablet..")
+        else:
+            print("Tablet is off - cannot open app ")
+    def watch_video(self):
+        if self.is_powered_on:
+            self.open_app("YouTube")
+            print(" Now playing video ...")
+        else:
+            print("Tablet is off - cannot watch video")
+            
+    def take_notes(self):
+        if self.is_powered_on:
+            self.open_app("Notes")
+            print(" Taking notes with stylus...")
+print("\n=== Electronic Device hierarchy ===")
+phone = Phone("Apple", "iphone 15", 4000, 6.1)
+laptop = Laptop("Dell", "XPS 13", 6000, 16, 512)
+tablet = Tablet("Samsung", "Galaxy Tab", 8000, True)
+
+phone.power_on()
+phone.add_contracts("Alice", "123-456-7890")
+phone.make_call("123-456-7890")
+
+laptop.power_on()
+laptop.coding_session()
+laptop.close_program("Terminal")
+
+tablet.watch_video()  #should fail tablet is off
+tablet.power_on()
+tablet.watch_video()
+tablet.take_notes()
+
+      # there are some small mistakes in program
